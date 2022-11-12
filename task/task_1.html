@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mt-5">
+        <input id="id" type="text">
+
+        <input id="name" type="text">
+
+        <input id="surname" type="text">
+        <button id="button">Add list item</button><br><br>
+    </div>
+
+    <table id="myTable" class="table" style="width:200px">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+        </tr>
+
+    </table>
+    <script>
+        let id = document.getElementById("id");
+        let name = document.getElementById("name");
+        let surname = document.getElementById("surname");
+        let button = document.getElementById("button");
+        var count=0;
+
+        button.addEventListener("click", function () {
+            count++
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(count);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+
+
+            cell1.innerHTML = id.value;
+            cell2.innerHTML = name.value;
+            cell3.innerHTML = surname.value;
+            id.value = ''
+            name.value = ''
+            surname.value = ''
+        })
+    </script>
+</body>
+
+</html>
